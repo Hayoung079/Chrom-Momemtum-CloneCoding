@@ -1,5 +1,5 @@
-const form = document.querySelector(".js-from"), // form태그
-    input = form.querySelector("input"), //input태그
+const form = document.querySelector(".js-from"), 
+    input = form.querySelector("input"), 
     greeting = document.querySelector(".js-greetings"); //h4태그
 
 const USER_LS = "currentUser", // localStorage key값
@@ -13,7 +13,7 @@ function saveName(text){
 // form태그에서 submit할 때
 function handleSubmit(event){
     event.preventDefault(); 
-    const currentValue = input.value; // input태그 값
+    const currentValue = input.value; 
     paintGreeting(currentValue); 
     saveName(currentValue);
 }
@@ -31,12 +31,13 @@ function paintGreeting(text){
     greeting.innerHTML = `Hello ${text}`;
 }
 
-// lacalStorage에 있는 이름을 h4에 올리기
-function loadName(){
+// lacalStorage에 있는 이름을 가져와 h4에 올리기
+function loadName(){ 
     const currentUser = localStorage.getItem(USER_LS); 
-    if(currentUser === null){  
+
+    if(currentUser === null){  // 저장된 유저가 없을 때
         askForName();
-    }else{
+    }else{  // 저장된 유저가 있을 때
         paintGreeting(currentUser);
     }
 }
