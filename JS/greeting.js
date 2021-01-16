@@ -10,9 +10,10 @@ function saveName(text){
     localStorage.setItem(USER_LS, text);
 }
 
-// form태그에서 submit할 때
+// submit할 때
 function handleSubmit(event){
-    event.preventDefault(); 
+    event.preventDefault();
+    // event.preventDefault(); : submit할 때 새로고침 되는 형상을 방지함
     const currentValue = input.value; 
     paintGreeting(currentValue); 
     saveName(currentValue);
