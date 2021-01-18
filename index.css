@@ -16,7 +16,7 @@ h1 {
 }
 
 @keyframes fadeIn {
-  form {
+  from {
     opacity: 0;
   }
   to {
